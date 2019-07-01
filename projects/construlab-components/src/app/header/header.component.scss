@@ -1,0 +1,37 @@
+@import 'main';
+
+:host {
+  align-items: center;
+  background: rgba(map-get($light-theme, overlap), .95);
+  border-bottom: $border-default;
+  box-shadow: 0 0 1px 0 rgba(map-get($pallet-gray, 100), .5);
+  display: flex;
+  height: $header-height;
+  justify-content: space-between;
+  padding-left: $space;
+  padding-right: $space;
+  width: 100%;
+  z-index: $zindex-header;
+
+  @include above(sm) {
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+}
+
+.logo {
+  @include mat-typography-level-to-styles($typography, headline);
+  color: map-get($pallet-wine, 500);
+  font-weight: 700;
+  text-decoration: none;
+
+  &--color-1 {
+    color: map-get($pallet-blue, 500);
+  }
+
+  &--color-2 {
+    color: map-get($pallet-pink, 500);
+  }
+}

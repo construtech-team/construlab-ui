@@ -1,0 +1,236 @@
+$white: #ffffff;
+$black: #000000;
+
+$pallet-gray: (
+  50: #f9f9f9,
+  100: #d4d4d5,
+  200: #b1aeb3,
+  300: #928e94,
+  400: #868288,
+  500: #777777,
+  600: #69666c,
+  700: #5b575e,
+  800: #3f3c42,
+  900: #232323,
+  contrast: (
+    50: #232323,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff
+  )
+);
+
+$pallet-orange: (
+  50: #ffffff,
+  100: #ffdca9,
+  200: #ffd18c,
+  300: #ffc36c,
+  400: #ffb64b,
+  500: #ffa726,
+  600: #f39720,
+  700: #de8017,
+  800: #ce6c0f,
+  900: #bc5708,
+  contrast: (
+    50: #232323,
+    100: #232323,
+    200: #232323,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff
+  )
+);
+
+$pallet-blue: (
+  50: #ffffff,
+  100: #bedcff,
+  200: #9fccfe,
+  300: #8ac0fe,
+  400: #66adfd,
+  500: #409aff,
+  600: #2181fd,
+  700: #0d5bfc,
+  800: #0444e9,
+  900: #0020dd,
+  contrast: (
+    50: #0c0505,
+    100: #232323,
+    200: #232323,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff
+  )
+);
+
+$pallet-red: (
+  50: #ffffff,
+  100: #f99bad,
+  200: #fc7e96,
+  300: #fb5675,
+  400: #fd3057,
+  500: #ea2046,
+  600: #cf153d,
+  700: #bc0d37,
+  800: #ab0632,
+  900: #97022b,
+  contrast: (
+    50: #232323,
+    100: #232323,
+    200: #232323,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff
+  )
+);
+
+$pallet-yellow: (
+  50: #ffffff,
+  100: #f4ecd5,
+  200: #f7e6b4,
+  300: #fae29b,
+  400: #fcdb7b,
+  500: #fed55d,
+  600: #fecb4c,
+  700: #febf3a,
+  800: #fdb121,
+  900: #fda418,
+  contrast: (
+    50: #232323,
+    100: #232323,
+    200: #232323,
+    300: #232323,
+    400: #232323,
+    500: #232323,
+    600: #232323,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff
+  )
+);
+
+$pallet-green: (
+  50: #ffffff,
+  100: #adebce,
+  200: #95e5c0,
+  300: #7cdeb1,
+  400: #5bd69e,
+  500: #3fcf8d,
+  600: #2dc176,
+  700: #19b05b,
+  800: #0b9e42,
+  900: #03882a,
+  contrast: (
+    50: #232323,
+    100: #232323,
+    200: #232323,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff
+  )
+);
+
+$pallet-pink: (
+    50 : #ffe5ed,
+    100 : #ffbdd2,
+    200 : #ff92b5,
+    300 : #ff6697,
+    400 : #ff4580,
+    500 : #ff246a,
+    600 : #ff2062,
+    700 : #ff1b57,
+    800 : #ff164d,
+    900 : #ff0d3c,
+    A100 : #ffffff,
+    A200 : #fff6f8,
+    A400 : #ffc3cd,
+    A700 : #ffaab7,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$pallet-wine: (
+    50 : #f1e2ea,
+    100 : #dbb6ca,
+    200 : #c486a7,
+    300 : #ac5683,
+    400 : #9a3169,
+    500 : #880d4e,
+    600 : #800b47,
+    700 : #75093d,
+    800 : #6b0735,
+    900 : #580325,
+    A100 : #ff8aaf,
+    A200 : #ff578c,
+    A400 : #ff246a,
+    A700 : #ff0a58,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$light-theme: (
+  bg: map-get($pallet-gray, 50),
+  accent: map-get($pallet-green, 500),
+  overlap: $white,
+  text-primary: map-get(map-get($pallet-gray, contrast), 50),
+  text-secondary: map-get($pallet-gray, 400),
+  text-disabled: map-get($pallet-gray, 200)
+);
+
+$dark-theme: (
+  bg: map-get($pallet-gray, 800),
+  accent: map-get($pallet-green, 500),
+  overlap: $black,
+  text-primary: map-get(map-get($pallet-gray, contrast), 800),
+  text-secondary: map-get($pallet-gray, 300),
+  text-disabled: map-get($pallet-gray, 200)
+);

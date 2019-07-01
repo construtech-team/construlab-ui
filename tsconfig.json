@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "construlab-ui": [
+        "dist/construlab-ui"
+      ],
+      "construlab-ui/*": [
+        "dist/construlab-ui/*"
+      ]
+    }
   }
 }

@@ -1,0 +1,12 @@
+@import 'main';
+
+$construlab-ui-primary: mat-palette($pallet-wine);
+$construlab-ui-accent: mat-palette($pallet-green);
+$construlab-ui-theme: mat-light-theme($construlab-ui-primary, $construlab-ui-accent);
+
+.construlab-ui {
+  @include angular-material-theme($construlab-ui-theme);
+  @include mat-typography-level-to-styles($typography, body-1);
+  background-color: map-get($light-theme, bg);
+  color: map-get($light-theme, textg);
+}

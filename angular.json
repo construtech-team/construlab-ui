@@ -2,5 +2,181 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "construlab-ui": {
+      "projectType": "library",
+      "root": "projects/construlab-ui",
+      "sourceRoot": "projects/construlab-ui/src",
+      "prefix": "con",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/construlab-ui/tsconfig.lib.json",
+            "project": "projects/construlab-ui/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/construlab-ui/src/test.ts",
+            "tsConfig": "projects/construlab-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/construlab-ui/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/construlab-ui/tsconfig.lib.json",
+              "projects/construlab-ui/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "construlab-components": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/construlab-components",
+      "sourceRoot": "projects/construlab-components/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/construlab-components",
+            "index": "projects/construlab-components/src/index.html",
+            "main": "projects/construlab-components/src/main.ts",
+            "polyfills": "projects/construlab-components/src/polyfills.ts",
+            "tsConfig": "projects/construlab-components/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/construlab-components/src/favicon.ico",
+              "projects/construlab-components/src/assets"
+            ],
+            "styles": [
+              "projects/construlab-components/src/styles.scss",
+              "projects/construlab-components/src/assets/themes/theme.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/construlab-components/src/assets/styles"]
+            },
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/construlab-components/src/environments/environment.ts",
+                  "with": "projects/construlab-components/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "bundle",
+                  "name": "polyfills",
+                  "baseline": "60kb",
+                  "maximumWarning": "50kb",
+                  "maximumError": "100kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "vendor",
+                  "baseline": "800kb",
+                  "maximumWarning": "100kb",
+                  "maximumError": "200kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "styles",
+                  "baseline": "100kb",
+                  "maximumWarning": "50kb",
+                  "maximumError": "100kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "main",
+                  "baseline": "50kb",
+                  "maximumWarning": "50kb",
+                  "maximumError": "100kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "construlab-components:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "construlab-components:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "construlab-components:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/construlab-components/src/test.ts",
+            "polyfills": "projects/construlab-components/src/polyfills.ts",
+            "tsConfig": "projects/construlab-components/tsconfig.spec.json",
+            "karmaConfig": "projects/construlab-components/karma.conf.js",
+            "assets": [
+              "projects/construlab-components/src/favicon.ico",
+              "projects/construlab-components/src/assets"
+            ],
+            "styles": [
+              "projects/construlab-components/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/construlab-components/tsconfig.app.json",
+              "projects/construlab-components/tsconfig.spec.json",
+              "projects/construlab-components/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/construlab-components/e2e/protractor.conf.js",
+            "devServerTarget": "construlab-components:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "construlab-components:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "construlab-ui"
 }

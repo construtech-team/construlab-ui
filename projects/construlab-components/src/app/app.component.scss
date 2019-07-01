@@ -1,0 +1,7 @@
+@import 'main';
+
+.main {
+  @include above(sm) {
+    margin-top: $header-height;
+  }
+}

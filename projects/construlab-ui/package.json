@@ -1,0 +1,18 @@
+{
+  "name": "construlab-ui",
+  "version": "1.0.1",
+  "license": "MIT",
+  "homepage": "https://github.com/construtech-team/construlab-ui/",
+  "bugs": {
+    "url": "https://github.com/construtech-team/construlab-ui/issues"
+  },
+  "keywords": [
+    "angular",
+    "material",
+    "components"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^8.0.3",
+    "@angular/core": "^8.0.3"
+  }
+}
